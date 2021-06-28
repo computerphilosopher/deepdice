@@ -1,4 +1,4 @@
-module dice
+module github.com/computerphilosopher/deepdice
 
 go 1.16
 

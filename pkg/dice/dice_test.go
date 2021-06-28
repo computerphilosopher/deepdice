@@ -1,7 +1,7 @@
 package dice_test
 
 import (
-	"dice"
+	"github.com/computerphilosopher/deepdice/pkg/dice"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
