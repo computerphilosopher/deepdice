@@ -61,7 +61,7 @@ func (keeper *DiceKeeper) IsEmpty(idx int) (bool, error) {
 
 func (keeper *DiceKeeper) Keep(dice *Dice, idx int) error {
 	if idx >= len(keeper.dices) {
-		return makeError("Dicekeeper.Keep", outOfRangeMsg)
+		return makeError(outOfRangeMsg, "DiceKeeper.Keep")
 	}
 	keeper.dices[idx] = dice
 	return nil
