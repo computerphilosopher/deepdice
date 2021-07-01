@@ -30,3 +30,27 @@ func TestSingle(t *testing.T) {
 	assert.Equal(t, 0, scorer.ScoreSingle(dices, 5))
 	assert.Equal(t, 6, scorer.ScoreSingle(dices, 6))
 }
+
+func TestNOfAKind(t *testing.T) {
+	dices := [][]scorer.Scorable{
+		[]scorer.Scorable{
+			FakeDice{1},
+			FakeDice{1},
+			FakeDice{2},
+			FakeDice{1},
+			FakeDice{3},
+		},
+		[]scorer.Scorable{
+			FakeDice{3},
+			FakeDice{3},
+			FakeDice{3},
+			FakeDice{1},
+			FakeDice{3},
+		},
+	}
+
+	assert.Equal(t, 8, scorer.ScoreNOfAKind(dices[0], 3))
+	assert.Equal(t, 0, scorer.ScoreNOfAKind(dices[0], 4))
+	assert.Equal(t, 13, scorer.ScoreNOfAKind(dices[1], 4))
+	assert.Equal(t, 0, scorer.ScoreNOfAKind(dices[0], 5))
+}
