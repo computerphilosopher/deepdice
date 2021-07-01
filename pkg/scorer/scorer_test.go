@@ -54,3 +54,25 @@ func TestNOfAKind(t *testing.T) {
 	assert.Equal(t, 13, scorer.ScoreNOfAKind(dices[1], 4))
 	assert.Equal(t, 0, scorer.ScoreNOfAKind(dices[0], 5))
 }
+
+func TestYacht(t *testing.T) {
+	dices := [][]scorer.Scorable{
+		[]scorer.Scorable{
+			FakeDice{5},
+			FakeDice{5},
+			FakeDice{5},
+			FakeDice{5},
+			FakeDice{5},
+		},
+		[]scorer.Scorable{
+			FakeDice{3},
+			FakeDice{3},
+			FakeDice{3},
+			FakeDice{1},
+			FakeDice{3},
+		},
+	}
+
+	assert.Equal(t, 50, scorer.ScoreYacht(dices[0]))
+	assert.Equal(t, 0, scorer.ScoreYacht(dices[1]))
+}

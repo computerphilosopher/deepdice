@@ -39,3 +39,10 @@ func ScoreNOfAKind(scorables []Scorable, n int) int {
 
 	return 0
 }
+
+func ScoreYacht(scorables []Scorable) int {
+	if ScoreNOfAKind(scorables, len(scorables)) > 0 {
+		return 50
+	}
+	return 0
+}
