@@ -46,3 +46,7 @@ func ScoreYacht(scorables []Scorable) int {
 	}
 	return 0
 }
+
+func ScoreChoices(scorables []Scorable) int {
+	return sum(scorables)
+}

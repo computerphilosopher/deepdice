@@ -76,3 +76,25 @@ func TestYacht(t *testing.T) {
 	assert.Equal(t, 50, scorer.ScoreYacht(dices[0]))
 	assert.Equal(t, 0, scorer.ScoreYacht(dices[1]))
 }
+
+func ScoreChoices(t *testing.T) {
+	dices := [][]scorer.Scorable{
+		[]scorer.Scorable{
+			FakeDice{1},
+			FakeDice{2},
+			FakeDice{3},
+			FakeDice{4},
+			FakeDice{5},
+		},
+		[]scorer.Scorable{
+			FakeDice{6},
+			FakeDice{6},
+			FakeDice{3},
+			FakeDice{5},
+			FakeDice{4},
+		},
+	}
+
+	assert.Equal(t, 15, scorer.ScoreChoices(dices[0]))
+	assert.Equal(t, 24, scorer.ScoreChoices(dices[1]))
+}
